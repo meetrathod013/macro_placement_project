@@ -1,0 +1,29 @@
+library(simple_macro_lib) {
+
+  delay_model : table_lookup;
+
+  cell(simple_macro) {
+    area : 1600;
+
+    pin(clk) {
+      direction : input;
+      capacitance : 0.01;
+    }
+
+    pin(din[0]) {
+      direction : input;
+      capacitance : 0.01;
+    }
+
+    pin(dout[0]) {
+      direction : output;
+      function : "din[0]";
+      timing() {
+        related_pin : "clk";
+        timing_sense : positive_unate;
+        cell_rise (scalar) { values (0.1); }
+        cell_fall (scalar) { values (0.1); }
+      }
+    }
+  }
+}

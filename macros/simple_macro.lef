@@ -1,0 +1,41 @@
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+
+MACRO simple_macro
+  CLASS BLOCK ;
+  ORIGIN 0 0 ;
+  SIZE 40 BY 40 ;
+  SYMMETRY X Y R90 ;
+  SITE unithd ;
+
+  PIN clk
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+      RECT 5 30 10 35 ;
+    END
+  END clk
+
+  PIN din[0]
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+      RECT 5 5 10 10 ;
+    END
+  END din[0]
+
+  PIN dout[0]
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met2 ;
+      RECT 30 5 35 10 ;
+    END
+  END dout[0]
+
+END simple_macro
+
+END LIBRARY
